@@ -8,5 +8,5 @@ class PostList(generic.ListView):
     View for all the posts
     """
     queryset = Post.objects.all()
-    template_name = "post_list.html"
+    template_name = "forum/index.html"
 
