@@ -30,7 +30,17 @@ i {
     font-size: 100%;
 }
 
-.pagination {
+.pagination>li>a {
+    background-color: white;
     color: #3a3b3c;
-    text-decoration: none;
+}
+
+.page-link {
+    color: #3a3b3c !important;
+}
+
+.page-item.active .page-link {
+    background-color: #3a3b3c !important;
+    color: white !important;
+    border-color: #3a3b3c !important;
 }
