@@ -21,5 +21,8 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_on"]
 
+    def get_content_preview(self):
+        return '\n'.join(self.content.split('\n')[:2])
+
     def __str__(self):
         return f"{self.title} by {self.author}"

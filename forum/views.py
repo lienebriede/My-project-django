@@ -7,8 +7,8 @@ class PostList(generic.ListView):
     """
     View for all the posts
     """
+    model = Post
     queryset = Post.objects.all()
     template_name = "forum/index.html"
-    
     paginate_by = 5
 
