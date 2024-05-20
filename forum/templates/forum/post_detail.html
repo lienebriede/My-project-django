@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<!-- Individual post -->
+<div class="container">
+    <!-- Go back arrow -->
+    <a href="{% url 'home' %}" aria-label="go back home" class="ps-4">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
+    <div class="row m-3">
+
+        <p class="mb-0">Posted by <strong>{{post.author}}</strong></p>
+        <p>{{post.created_on}}</p>
+
+
+        <p><strong>{{ post.title }}</strong></p>
+        <p>{{ post.content }}</p>
+
+        <hr>
+    </div>
+</div>
+
+{% endblock content %}

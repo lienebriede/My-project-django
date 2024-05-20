@@ -44,3 +44,8 @@ i {
     color: white !important;
     border-color: #3a3b3c !important;
 }
+
+.container {
+    background-color: #ceeaeea3 !important;
+    border-radius: 10px;
+}
