@@ -29,3 +29,8 @@ i {
 .copy {
     font-size: 100%;
 }
+
+.pagination {
+    color: #3a3b3c;
+    text-decoration: none;
+}

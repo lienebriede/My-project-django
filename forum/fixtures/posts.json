@@ -1,0 +1,110 @@
+[
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 000",
+            "author": 1,
+            "slug": "sample-post-000",
+            "content": "This is a sample post, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 001",
+            "author": 1,
+            "slug": "sample-post-001",
+            "content": "This is a sample post nr1, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 002",
+            "author": 1,
+            "slug": "sample-post-002",
+            "content": "This is a sample post nr2, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 003",
+            "author": 1,
+            "slug": "sample-post-003",
+            "content": "This is a sample post nr3, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 004",
+            "author": 1,
+            "slug": "sample-post-004",
+            "content": "This is a sample post nr4, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 005",
+            "author": 1,
+            "slug": "sample-post-005",
+            "content": "This is a sample post nr5, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 006",
+            "author": 1,
+            "slug": "sample-post-006",
+            "content": "This is a sample post nr6, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 007",
+            "author": 1,
+            "slug": "sample-post-007",
+            "content": "This is a sample post nr7, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    },
+    {
+        "model": "forum.post",
+        "pk": null,
+        "fields": {
+            "title": "Sample post 008",
+            "author": 1,
+            "slug": "sample-post-008",
+            "content": "This is a sample post nr8, let's see how this post page looks like now",
+            "created_on": "2023-07-14T13:58:53.884Z",
+            "status": 1
+        }
+    }
+]

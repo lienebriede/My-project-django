@@ -9,4 +9,6 @@ class PostList(generic.ListView):
     """
     queryset = Post.objects.all()
     template_name = "forum/index.html"
+    
+    paginate_by = 5
 
