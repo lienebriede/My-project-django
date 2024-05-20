@@ -11,8 +11,11 @@
             <p>{{post.created_on}}</p>
         </div>
         <div class="col-8">
-            <p><strong>{{ post.title }}</strong></p>
-            <p>{{ post.get_content_preview }}</p>
+            <!-- Link to an individual post display-->
+            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                <p><strong>{{ post.title }}</strong></p>
+                <p>{{ post.get_content_preview }}</p>
+            </a>
         </div>
         <hr>
         {% endfor %}
