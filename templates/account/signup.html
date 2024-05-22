@@ -10,9 +10,9 @@
 
 <!-- Sign up form -->
 <div class="container col-md-6 p-4">
-  <!-- Go back arrow -->
+  <!-- Exit button -->
   <a href="{% url 'home' %}" aria-label="go back home">
-    <i class="fa-solid fa-arrow-left"></i>
+    <i class="fa-solid fa-xmark float-end"></i>
   </a>
   <div class="row">
     <div class="pt-4">
@@ -23,14 +23,7 @@
     <div>
       <form class="signup pt-2" method="POST" action="{% url 'account_signup' %}">
         {% csrf_token %}
-        <div class="mb-3">
-          <input type="text" name="{{ form.username.name}}" placeholder="Email or username" class="form-control"
-            id="id_username" required>
-        </div>
-        <div class="mb-3">
-          <input type="password" name="{{ form.password.name }}" placeholder="Password" class="form-control"
-            id="id_password" required>
-        </div>
+        {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
