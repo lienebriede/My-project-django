@@ -17,10 +17,31 @@
 
 
         <p><strong>{{ post.title }}</strong></p>
-        <p>{{ post.content }}</p>
+        <p>{{ post.content | safe }}</p>
 
         <hr>
     </div>
+    <!-- Count of likes -->
+    <!-- Count of comments -->
+    <div class="row m-3">
+
+    </div>
+    <!-- Comments -->
+    <div class="row m-3">
+        {% for comment in comments %}
+        <div class="comment-container my-3">
+            <div class="pt-3">
+                <p>
+                    <span><strong>{{ comment.author }}</strong></span> on {{ comment.created_on }}
+                </p>
+            </div>
+            <div id=" comment{{ comment.id }}">
+                {{ comment.body | linebreaks }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
+
 
 {% endblock content %}

@@ -72,3 +72,8 @@ i {
 .pink-text {
     color: #ec4a7b;
 }
+
+.comment-container {
+    background-color: #f7f7f0 !important;
+    border-radius: 10px !important;
+}
