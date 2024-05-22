@@ -46,6 +46,25 @@ i {
 }
 
 .container {
-    background-color: #ceeaeea3 !important;
-    border-radius: 10px;
+    background-color: white !important;
+    border-radius: 20px;
+}
+
+.btn-primary {
+    background-color: #ef6c94;
+    border-color: #ef6c94;
+}
+
+.btn-primary:hover {
+    background-color: #ec4a7b;
+    border-color: #ec4a7b;
+}
+
+.signup-link {
+    color: #ec4a7b;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
 }
