@@ -68,3 +68,7 @@ i {
 .signup-link:hover {
     text-decoration: underline;
 }
+
+.pink-text {
+    color: #ec4a7b;
+}

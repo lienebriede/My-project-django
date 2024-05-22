@@ -61,15 +61,15 @@
             </div>
         </div>
     </nav>
-    <main class="flex-shrink-0 mt-5">
+    <main class="mt-5">
         <div class="mt-5">
-            {% if user.is_authenticated %}
-            <p class="text-end m-3">You are logged in as {{ user }}</p>
-            {% else %}
-            <p class="text-end m-3">You are not logged in</p>
-            {% endif %}
+
+            {% block login_message %}
+            {% endblock %}
+
             {% block content %}
             {% endblock %}
+
         </div>
     </main>
     <!-- Footer -->

@@ -62,3 +62,18 @@
     {% endif %}
 
     {% endblock %}
+
+    <!-- Login message -->
+    {% block login_message %}
+
+    <div class="row m-4 pt-3">
+        {% if user.is_authenticated %}
+        <p><strong>You are logged in as <span class="pink-text">{{ user }}</span></strong></p>
+        {% else %}
+        <p><strong>You are not logged in. Please <a class="link signup-link" href="{% url 'account_login' %}">log in
+                </a>to post and comment!</strong></p>
+        {% endif %}
+    </div>
+
+
+    {% endblock %}
