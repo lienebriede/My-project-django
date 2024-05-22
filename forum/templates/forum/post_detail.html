@@ -19,12 +19,16 @@
         <p><strong>{{ post.title }}</strong></p>
         <p>{{ post.content | safe }}</p>
 
-        <hr>
     </div>
-    <!-- Count of likes -->
-    <!-- Count of comments -->
+    <!-- Count of likes and comments -->
     <div class="row m-3">
-
+        <div class="col-12">
+            <span><i class="fa-regular fa-thumbs-up"></i></span>
+            <span class="ps-4"><i class="fa-regular fa-comment"></i> {{ comment_count }}</span>
+        </div>
+        <div class="col-12">
+            <hr>
+        </div>
     </div>
     <!-- Comments -->
     <div class="row m-3">
