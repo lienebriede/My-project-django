@@ -87,3 +87,7 @@ i {
     border-color: #f4f7f7 !important;
     border-radius: 10px !important;
 }
+
+.fa-comment {
+    font-size: 18px;
+}

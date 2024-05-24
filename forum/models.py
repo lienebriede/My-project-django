@@ -24,7 +24,9 @@ class Post(models.Model):
 
     # returns only two first lines of comment text
     def get_content_preview(self):
-        return '\n'.join(self.content.split('\n')[:2])
+        words = self.content.split()  
+        first_25_words = words[:25]  
+        return ' '.join(first_25_words)
 
     # converts a string for a title in database
     def __str__(self):

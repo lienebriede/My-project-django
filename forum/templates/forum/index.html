@@ -14,16 +14,17 @@
             <!-- Link to an individual post display-->
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                 <p><strong>{{ post.title }}</strong></p>
-                <p>{{ post.get_content_preview }}</p>
+                <p class="pb-2">{{ post.get_content_preview }}...</p>
             </a>
-        </div>
-        <hr>
-        <!-- Count of comments -->
-        <div class="row mb-4">
-            <div class="col-12">
-                <span><i class="fa-regular fa-comment"></i> {{ post.comment_count }}</span>
+            <!-- Count of comments -->
+            <div class="row mb-2">
+                <div class="col-12">
+                    <span><i class="fa-regular fa-comment"></i> {{ post.comment_count }}</span>
+                </div>
             </div>
         </div>
+
+        <hr>
         {% endfor %}
     </div>
 
