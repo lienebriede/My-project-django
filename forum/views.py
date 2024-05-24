@@ -1,9 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.db.models import Count
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 def post_list(request):
     """
@@ -15,10 +15,21 @@ def post_list(request):
     page_obj = paginator.get_page(page_number)
     is_paginated = page_obj.has_other_pages()
 
+    post_form = PostForm() 
+    
+    if request.method == "POST":
+        post_form = PostForm(request.POST)
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('post_list')
+
     context = {
         'page_obj': page_obj,
         'posts': page_obj.object_list,
         'is_paginated': is_paginated,
+        'post_form': post_form
     }
 
     return render(request, "forum/index.html", context)
