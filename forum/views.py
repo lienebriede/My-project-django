@@ -13,10 +13,12 @@ def post_list(request):
     paginator = Paginator(queryset, 5) 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
+    is_paginated = page_obj.has_other_pages()
 
     context = {
         'page_obj': page_obj,
-        'posts': page_obj.object_list
+        'posts': page_obj.object_list,
+        'is_paginated': is_paginated,
     }
 
     return render(request, "forum/index.html", context)
