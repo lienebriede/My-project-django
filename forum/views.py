@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponse
+from django.db.models import Count
 from .models import Post
 from .forms import CommentForm
 
@@ -12,6 +13,18 @@ class PostList(generic.ListView):
     queryset = Post.objects.all()
     template_name = "forum/index.html"
     paginate_by = 5
+
+    """
+    These methods access the comment_count
+    """
+    def get_queryset(self):
+        queryset = super().get_queryset().annotate(comment_count=Count('comments'))
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['posts'] = self.get_queryset()
+        return context
 
 
 def post_detail(request, slug):

@@ -45,6 +45,10 @@ i {
     border-color: #3a3b3c !important;
 }
 
+.post-link {
+    text-decoration: none;
+}
+
 .container {
     background-color: white !important;
     border-radius: 20px;
