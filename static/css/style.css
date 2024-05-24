@@ -77,15 +77,11 @@ i {
     color: #ec4a7b;
 }
 
-.comment-container {
-    background-color: #f4f7f7 !important;
-    border-radius: 10px !important;
-}
-
+.comment-container,
 .form-control {
-    background-color: #f4f7f7 !important;
-    border-color: #f4f7f7 !important;
+    background-color: #f4f7f7b9 !important;
     border-radius: 10px !important;
+    border-color: #f4f7f7 !important;
 }
 
 .fa-comment {
