@@ -1,31 +1,25 @@
 from django.shortcuts import render, get_object_or_404
-from django.views import generic
+from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.db.models import Count
 from .models import Post
 from .forms import CommentForm
 
-class PostList(generic.ListView):
+def post_list(request):
     """
     View for all the posts
     """
-    model = Post
-    queryset = Post.objects.all()
-    template_name = "forum/index.html"
-    paginate_by = 5
+    queryset = Post.objects.all().annotate(comment_count=Count('comments')).order_by('-created_on')
+    paginator = Paginator(queryset, 5) 
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
 
-    """
-    These methods access the comment_count
-    """
-    def get_queryset(self):
-        queryset = super().get_queryset().annotate(comment_count=Count('comments'))
-        return queryset
+    context = {
+        'page_obj': page_obj,
+        'posts': page_obj.object_list
+    }
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['posts'] = self.get_queryset()
-        return context
-
+    return render(request, "forum/index.html", context)
 
 def post_detail(request, slug):
     """
