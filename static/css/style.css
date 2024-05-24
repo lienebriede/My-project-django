@@ -14,6 +14,14 @@ body {
     background-color: #374955;
 }
 
+.btn-navbar {
+    heigth: 25%;
+}
+
+.nav-link {
+    color: white;
+}
+
 a {
     color: inherit;
 }
@@ -55,12 +63,12 @@ i {
 }
 
 .btn-primary {
-    background-color: #ef6c94;
+    background-color: #ef6c94 !important;
     border-color: #ef6c94;
 }
 
 .btn-primary:hover {
-    background-color: #ec4a7b;
+    background-color: #ec4a7b !important;
     border-color: #ec4a7b;
 }
 
@@ -81,7 +89,12 @@ i {
 .form-control {
     background-color: #f4f7f7b9 !important;
     border-radius: 10px !important;
-    border-color: #f4f7f7 !important;
+    border-color: #f4f7f7b9 !important;
+}
+
+.post-container {
+    background-color: rgb(255, 255, 255) !important;
+    border-radius: 10px !important;
 }
 
 .fa-comment {
