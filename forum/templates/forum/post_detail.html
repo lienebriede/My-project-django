@@ -33,13 +33,10 @@
     <!-- Add comment -->
     <div class="row m-3">
         {% if user.is_authenticated %}
-        <div class="comment-container my-3">
-            <p>Add a Comment</p>
-        </div>
-        <form id="commentForm" method="post">
-            {{ comment_form | crispy }}
+        <form id="commentForm" method="post" class="form-inline">
             {% csrf_token %}
-            <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+            {{ comment_form | crispy }}
+            <button id="submitButton" type="submit" class="btn btn-primary">Add</button>
         </form>
         {% else %}
         <p><strong>You are not logged in. Please <a class="link signup-link" href="{% url 'account_login' %}">log in

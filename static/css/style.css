@@ -74,6 +74,12 @@ i {
 }
 
 .comment-container {
-    background-color: #f7f7f0 !important;
+    background-color: #f4f7f7 !important;
+    border-radius: 10px !important;
+}
+
+.form-control {
+    background-color: #f4f7f7 !important;
+    border-color: #f4f7f7 !important;
     border-radius: 10px !important;
 }
