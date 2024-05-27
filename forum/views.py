@@ -70,6 +70,10 @@ def post_detail(request, slug):
             comment.author = request.user
             comment.post = post
             comment.save()
+            messages.success(
+                request,
+                "Thanks for commenting!"
+            )
 
     comment_form = CommentForm()
 
