@@ -2,15 +2,15 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.db.models import Count
+from django.contrib import messages
 from .models import Post
-from .forms import CommentForm
-from .forms import PostForm
+from .forms import CommentForm, PostForm
 
 def post_list(request):
     """
     View for all the posts
     """
-    queryset = Post.objects.all().annotate(comment_count=Count('comments')).order_by('-created_on')
+    queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments')).order_by('-created_on')
     paginator = Paginator(queryset, 5) 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -38,7 +38,11 @@ def post_create(request):
             post = post_form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('post_detail', slug=post.slug)
+            messages.success(
+                request,
+                "Thanks for posting! Your post will be visible shortly."
+            )
+            return redirect('home')
     
     
     return render(

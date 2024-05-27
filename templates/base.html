@@ -57,6 +57,20 @@
             </div>
         </div>
     </nav>
+
+    <!-- Message display -->
+    {% if messages %}
+    <div class="container mt-5">
+        <div class="mt-5">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
     <main class="mt-5">
         <div class="mt-5">
 
