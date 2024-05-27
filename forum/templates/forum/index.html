@@ -5,17 +5,20 @@
 <div class="container-fluid">
     <!-- Create a post section -->
     {% if user.is_authenticated %}
-    <div class="btn btn-add-post ms-3">
+    <div class="row add-post-container mx-3 mb-5">
         <a href=" {% url 'post_create' %}" class="text-decoration-none">
-            <p class="ms-2">Add a
-                post!</p>
+            <p><strong>Add a post!</strong></p>
         </a>
     </div>
     {% endif %}
 
+    <div class="row m-3">
+        <h2>Latest</h2>
+        <hr>
+    </div>
     <!-- Post list display -->
     {% for post in posts %}
-    <div class="row m-3 post-container">
+    <div class="row m-3">
         <div class="col-4">
             <p class="mb-0">Posted by <strong>{{post.author}}</strong></p>
             <p>{{post.created_on}}</p>

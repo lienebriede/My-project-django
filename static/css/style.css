@@ -1,7 +1,13 @@
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+html,
 body {
+    height: 100%;
+}
+
+body {
+    padding-top: 80px;
     background: url("../images/background_wave.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -62,18 +68,19 @@ i {
     border-radius: 20px;
 }
 
+
 .btn-primary {
-    background-color: #ef6c94 !important;
-    border-color: #ef6c94;
+    background-color: #de245c !important;
+    border-color: #de245c;
 }
 
 .btn-primary:hover {
-    background-color: #ec4a7b !important;
-    border-color: #ec4a7b;
+    background-color: #d30e49 !important;
+    border-color: #d30e49;
 }
 
 .signup-link {
-    color: #ec4a7b;
+    color: #de245c;
     text-decoration: none;
 }
 
@@ -82,7 +89,7 @@ i {
 }
 
 .pink-text {
-    color: #ec4a7b;
+    color: #de245c;
 }
 
 
@@ -94,9 +101,10 @@ i {
 }
 
 
-.post-container {
-    background-color: rgb(255, 255, 255) !important;
+.add-post-container {
+    background-color: #ceeaeeba !important;
     border-radius: 10px !important;
+    height: 80px;
 }
 
 .btn-add-post {
