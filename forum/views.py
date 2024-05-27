@@ -3,7 +3,8 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.db.models import Count
 from .models import Post
-from .forms import CommentForm, PostForm
+from .forms import CommentForm
+from .forms import PostForm
 
 def post_list(request):
     """
@@ -15,24 +16,39 @@ def post_list(request):
     page_obj = paginator.get_page(page_number)
     is_paginated = page_obj.has_other_pages()
 
+    context = {
+            'page_obj': page_obj,
+            'posts': page_obj.object_list,
+            'is_paginated': is_paginated,
+        }
+
+    return render(request, "forum/index.html", context)
+
+def post_create(request):
+    """
+    Create a post view
+    """
+
     post_form = PostForm() 
-    
+
+
     if request.method == "POST":
         post_form = PostForm(request.POST)
         if post_form.is_valid():
             post = post_form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('post_list')
-
-    context = {
-        'page_obj': page_obj,
-        'posts': page_obj.object_list,
-        'is_paginated': is_paginated,
-        'post_form': post_form
-    }
-
-    return render(request, "forum/index.html", context)
+            return redirect('home')
+    
+    
+    return render(
+        request, 
+        "forum/post_create.html",
+        {
+            'post_form': post_form,
+        },
+    )
+    
 
 def post_detail(request, slug):
     """

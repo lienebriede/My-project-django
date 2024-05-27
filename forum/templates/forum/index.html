@@ -2,12 +2,6 @@
 
 {% block content %}
 
-<!-- Add a post -->
-<form method="POST">
-    {% csrf_token %}
-    {{ post_form.as_p }}
-    <button type="submit">Add</button>
-</form>
 <!-- Post list display -->
 <div class="container-fluid">
     {% for post in posts %}
