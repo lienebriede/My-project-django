@@ -85,6 +85,7 @@ i {
     color: #ec4a7b;
 }
 
+
 .comment-container,
 .form-control {
     background-color: #f4f7f7b9 !important;
@@ -94,6 +95,11 @@ i {
 
 .post-container {
     background-color: rgb(255, 255, 255) !important;
+    border-radius: 10px !important;
+}
+
+.btn-add-post {
+    background-color: #f9f871;
     border-radius: 10px !important;
 }
 

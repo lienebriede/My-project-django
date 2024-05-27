@@ -2,8 +2,18 @@
 
 {% block content %}
 
-<!-- Post list display -->
 <div class="container-fluid">
+    <!-- Create a post section -->
+    {% if user.is_authenticated %}
+    <div class="btn btn-add-post ms-3">
+        <a href=" {% url 'post_create' %}" class="text-decoration-none">
+            <p class="ms-2">Add a
+                post!</p>
+        </a>
+    </div>
+    {% endif %}
+
+    <!-- Post list display -->
     {% for post in posts %}
     <div class="row m-3 post-container">
         <div class="col-4">
@@ -73,7 +83,7 @@
     <!-- Login message -->
     {% block login_message %}
 
-    <div class="row m-4 pt-3">
+    <div class="row ms-4 pt-3">
         {% if user.is_authenticated %}
         <p><strong>You are logged in as <span class="pink-text">{{ user }}</span></strong></p>
         {% else %}
