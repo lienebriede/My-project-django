@@ -38,7 +38,7 @@ def post_create(request):
             post = post_form.save(commit=False)
             post.author = request.user
             post.save()
-            return redirect('home')
+            return redirect('post_detail', slug=post.slug)
     
     
     return render(
