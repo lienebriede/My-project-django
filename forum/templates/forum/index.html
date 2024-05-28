@@ -20,19 +20,25 @@
     <!-- Post list display -->
     {% for post in posts %}
     <div class="row m-3">
-        <div class="col-4">
+        <div class="col-6 col-md-4">
             <p class="mb-0">Posted by <strong>{{post.author}}</strong></p>
             <p>{{post.created_on}}</p>
         </div>
-        <div class="col-8">
+        <div class="col-6 col-md-8">
             <!-- Link to an individual post display-->
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                 <p><strong>{{ post.title }}</strong></p>
                 <p class="pb-2">{{ post.get_content_preview }}...</p>
             </a>
-            <!-- Count of comments -->
             <div class="row mb-2">
-                <div class="col-12">
+                <!-- Like count -->
+                <div class="col-5 col-md-2 col-lg-1">
+                    <span>
+                        <i class="fa-regular fa-thumbs-up"></i> {{ post.likes.count }}
+                    </span>
+                </div>
+                <!-- Comment count -->
+                <div class="col-5 col-md-2 col-lg-1">
                     <span><i class="fa-regular fa-comment"></i> {{ post.comment_count }}</span>
                 </div>
             </div>
