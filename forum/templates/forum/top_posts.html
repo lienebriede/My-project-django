@@ -3,27 +3,12 @@
 {% block content %}
 
 <div class="container-fluid">
-    <!-- Create a post section -->
-    {% if user.is_authenticated %}
-    <div class="row add-post-container border mx-3 mb-5">
-        <a href=" {% url 'post_create' %}" class="text-decoration-none">
-            <p>Add a post!</p>
-        </a>
-    </div>
-    {% endif %}
+    <!-- Go back arrow -->
+    <a href="{% url 'home' %}" aria-label="go back home" class="ps-4">
+        <i class="fa-solid fa-arrow-left"></i>
+    </a>
 
-    <div class="row m-3">
-        <div class="col-4 col-md-2">
-            <h4>Latest</h4>
-        </div>
-        <!-- Link to top posts -->
-        <div class="col-6"><a href="{% url 'top_posts' %}" class="text-decoration-none top-posts-a">
-                <i class=" fa-solid fa-crown"></i> Top</a>
-        </div>
-        <hr>
-    </div>
-
-    <!-- Post list display -->
+    <!-- Post display by popularity -->
     {% for post in posts %}
     <div class="row m-3">
         <div class="col-6 col-md-4">
