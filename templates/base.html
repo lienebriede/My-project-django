@@ -38,17 +38,26 @@
                 <ul class="navbar-nav ms-auto text-center">
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="btn btn-primary col-6 col-sm-2 col-lg-12 mx-auto nav-link {% if request.path == logout_url %}active{% endif %}"
+                        <a class="btn btn-primary col-6 col-sm-4 col-lg-12 mx-auto nav-link {% if request.path == logout_url %}active{% endif %}"
                             aria-current="page" href="{% url 'account_logout' %}">Log out</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="btn btn-primary col-6 col-sm-2 col-md-12 mx-auto nav-link {% if request.path == login_url %}active{% endif %}"
+                        <a class="btn btn-primary col-6 col-sm-4 col-lg-12 mx-auto nav-link {% if request.path == login_url %}active{% endif %}"
                             aria-current="page" href="{% url 'account_login' %}">Log in</a>
                     </li>
                     {% endif %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Latest</a>
+                        <a class="nav-link" href="{% url 'home' %}">Forum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-crown"></i> Top</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
             </div>

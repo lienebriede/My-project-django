@@ -13,8 +13,20 @@
     {% endif %}
 
     <div class="row m-3">
-        <h2>Latest</h2>
+        <div class="col-6">
+            <h2>Latest</h2>
+        </div>
+        <!-- Link to top posts -->
+        <div class="col-6 pe-auto d-flex justify-content-end"><a href="{% url 'top_posts' %}"
+                class="text-decoration-none top-posts-a">
+                <i class=" fa-solid fa-crown"></i> Top</a>
+        </div>
         <hr>
+    </div>
+
+
+    <div class="row m-3">
+
     </div>
 
     <!-- Post list display -->

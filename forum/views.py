@@ -8,7 +8,7 @@ from .forms import CommentForm, PostForm
 
 def post_list(request):
     """
-    View for all the posts
+    Display all the posts (latest first)
     """
     queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments')).order_by('-created_on')
     paginator = Paginator(queryset, 5) 
@@ -23,6 +23,28 @@ def post_list(request):
         }
 
     return render(request, "forum/index.html", context)
+
+def top_posts(request):
+    """
+    Display posts ordered by popularity
+    """
+    queryset = Post.objects.filter(status=1).annotate(
+        comment_count=Count('comments'),
+        popularity=Count('likes') + Count('comments')
+    ).order_by('-popularity', '-created_on')
+    paginator = Paginator(queryset, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    is_paginated = page_obj.has_other_pages()
+
+    context = {
+        'page_obj': page_obj,
+        'posts': page_obj.object_list,
+        'is_paginated': is_paginated,
+    }
+
+    return render(request, "forum/top_posts.html", context)
+
 
 def post_create(request):
     """
