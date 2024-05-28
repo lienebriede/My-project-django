@@ -102,8 +102,9 @@ i {
 
 
 .add-post-container {
-    background-color: #ceeaeeba !important;
+    background-color: white !important;
     border-radius: 10px !important;
+    border-color: rgb(69, 69, 69);
     height: 80px;
 }
 

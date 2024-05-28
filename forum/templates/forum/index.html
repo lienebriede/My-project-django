@@ -5,9 +5,9 @@
 <div class="container-fluid">
     <!-- Create a post section -->
     {% if user.is_authenticated %}
-    <div class="row add-post-container mx-3 mb-5">
+    <div class="row add-post-container border mx-3 mb-5">
         <a href=" {% url 'post_create' %}" class="text-decoration-none">
-            <p><strong>Add a post!</strong></p>
+            <p>Add a post!</p>
         </a>
     </div>
     {% endif %}
@@ -16,6 +16,7 @@
         <h2>Latest</h2>
         <hr>
     </div>
+
     <!-- Post list display -->
     {% for post in posts %}
     <div class="row m-3">
