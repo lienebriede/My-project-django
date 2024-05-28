@@ -49,3 +49,11 @@ class Comment(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
+
+class Like(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="likes")
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    # user can like one post only once
+    class Meta:
+        unique_together = ('post', 'user')

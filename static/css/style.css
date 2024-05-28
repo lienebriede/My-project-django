@@ -16,12 +16,13 @@ body {
         sans-serif;
 }
 
+
 .navbar {
     background-color: #374955;
 }
 
 .btn-navbar {
-    heigth: 25%;
+    height: 25%;
 }
 
 .nav-link {
@@ -113,6 +114,19 @@ i {
     border-radius: 10px !important;
 }
 
-.fa-comment {
+.btn-like {
+    border: none;
+    background-color: transparent;
+}
+
+
+.fa-comment,
+.fa-thumbs-up {
     font-size: 18px;
+    color: #3a3b3c;
+}
+
+
+.btn-liked {
+    color: #de245c;
 }

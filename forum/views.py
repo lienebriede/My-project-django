@@ -3,7 +3,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.db.models import Count
 from django.contrib import messages
-from .models import Post
+from .models import Post, Like
 from .forms import CommentForm, PostForm
 
 def post_list(request):
@@ -77,6 +77,17 @@ def post_detail(request, slug):
 
     comment_form = CommentForm()
 
+    if request.user.is_authenticated:
+        is_liked = Like.objects.filter(post=post, user=request.user).exists()
+
+        if 'like' in request.POST:
+            if is_liked:
+                post.likes.filter(user=request.user).delete()
+                is_liked = False
+            else:
+                Like.objects.create(post=post, user=request.user)
+                is_liked = True
+
     return render(
         request,
         "forum/post_detail.html",
@@ -84,6 +95,7 @@ def post_detail(request, slug):
         "comments": comments,
         "comment_count": comment_count,
         "comment_form": comment_form,
+        "is_liked": is_liked,
         },
 
     )
