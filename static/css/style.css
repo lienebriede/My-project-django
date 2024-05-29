@@ -133,5 +133,8 @@ i {
 
 .top-posts-a:hover {
     color: #d30e49;
+}
 
+.search-bar {
+    background-color: white !important;
 }
