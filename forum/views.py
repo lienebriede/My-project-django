@@ -1,16 +1,25 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
 from django.http import HttpResponse
-from django.db.models import Count
+from django.db.models import Count, Q
 from django.contrib import messages
 from .models import Post, Like
 from .forms import CommentForm, PostForm
 
 def post_list(request):
     """
-    Display all the posts (latest first)
+    Display all the posts (latest first) or filtered by search query
     """
-    queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments')).order_by('-created_on')
+    query = request.GET.get('q')
+    if query:
+        queryset = Post.objects.filter(
+            Q(title__icontains=query) | Q(content__icontains=query), 
+            status=1
+        ).annotate(comment_count=Count('comments')).order_by('-created_on')
+    else:
+        queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments')).order_by('-created_on')
+        print(f"Queryset count without search: {queryset.count()}") 
+
     paginator = Paginator(queryset, 5) 
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -20,6 +29,7 @@ def post_list(request):
             'page_obj': page_obj,
             'posts': page_obj.object_list,
             'is_paginated': is_paginated,
+            'query': query,
         }
 
     return render(request, "forum/index.html", context)
