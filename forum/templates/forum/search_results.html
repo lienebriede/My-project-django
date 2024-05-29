@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid">
+
+
+    {% if posts %}
+    <div class="row m-3">
+        <p><strong>Search results for "{{ query }}"</strong></p>
+    </div>
+    {% for post in posts %}
+    <div class="row m-3">
+        <div class="col-6 col-md-4">
+            <p class="mb-0">Posted by <strong>{{ post.author }}</strong></p>
+            <p>{{ post.created_on }}</p>
+        </div>
+        <div class="col-6 col-md-8">
+            <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                <p><strong>{{ post.title }}</strong></p>
+                <p class="pb-2">{{ post.get_content_preview }}...</p>
+            </a>
+            <div class="row mb-2">
+                <div class="col-5 col-md-2 col-lg-1">
+                    <span>
+                        <i class="fa-regular fa-thumbs-up"></i> {{ post.likes.count }}
+                    </span>
+                </div>
+                <div class="col-5 col-md-2 col-lg-1">
+                    <span><i class="fa-regular fa-comment"></i> {{ post.comment_count }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+    {% else %}
+    <div class="row m-3">
+        <p><strong>Sorry! No posts containing "{{ query }}" found.</strong></p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

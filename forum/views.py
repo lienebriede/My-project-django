@@ -6,9 +6,9 @@ from django.contrib import messages
 from .models import Post, Like
 from .forms import CommentForm, PostForm
 
-def post_list(request):
+def search_results(request):
     """
-    Display all the posts (latest first) or filtered by search query
+    Display posts filtered by search query
     """
     query = request.GET.get('q')
     if query:
@@ -17,8 +17,21 @@ def post_list(request):
             status=1
         ).annotate(comment_count=Count('comments')).order_by('-created_on')
     else:
-        queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments')).order_by('-created_on')
-        print(f"Queryset count without search: {queryset.count()}") 
+        queryset = Post.objects.none() 
+
+    context = {
+        'query': query,
+        'posts': queryset,
+    }
+
+    return render(request, "forum/search_results.html", context)
+
+def post_list(request):
+    """
+    Display all the posts (latest first)
+    """
+    query = request.GET.get('q', '')
+    queryset = Post.objects.filter(status=1).annotate(comment_count=Count('comments')).order_by('-created_on') 
 
     paginator = Paginator(queryset, 5) 
     page_number = request.GET.get('page')

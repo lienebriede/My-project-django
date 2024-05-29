@@ -138,3 +138,11 @@ i {
 .search-bar {
     background-color: white !important;
 }
+
+input.search-bar {
+    color: #3a3b3c !important;
+}
+
+input.search-bar::placeholder {
+    color: #94989a !important;
+}
