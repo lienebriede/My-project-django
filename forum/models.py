@@ -51,6 +51,9 @@ class Comment(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
 class Like(models.Model):
+    """
+    Model for likes
+    """
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="likes")
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 

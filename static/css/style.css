@@ -146,3 +146,20 @@ input.search-bar {
 input.search-bar::placeholder {
     color: #94989a !important;
 }
+
+.navbar .dropdown-menu {
+    background-color: #374955;
+}
+
+.nav-title {
+    color: rgb(167, 157, 157);
+    text-transform: uppercase;
+}
+
+.navbar i {
+    font-size: 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #de245c;
+}
