@@ -24,6 +24,7 @@ class Post(models.Model):
     class Meta:
         ordering = ["-created_on"]
 
+
     # generates a slug automatically
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -37,7 +38,7 @@ class Post(models.Model):
         first_25_words = words[:25]  
         return ' '.join(first_25_words)
 
-    # converts a string for a title in database
+    # returns a string for admin interface
     def __str__(self):
         return f"{self.title} by {self.author}"
 
@@ -50,6 +51,10 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
 
+    # returns a string for admin interface
+    def __str__(self):
+        return f"Comment by {self.author} on {self.post.title}"
+
 class Like(models.Model):
     """
     Model for likes
@@ -60,3 +65,9 @@ class Like(models.Model):
     # user can like one post only once
     class Meta:
         unique_together = ('post', 'user')
+
+    # returns a string for admin interface
+    def __str__(self):
+        return f"Liked by {self.post.author} on {self.post.title}"
+
+    
