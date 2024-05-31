@@ -31,25 +31,33 @@
             <a href="{% url 'home' %}"><img src="{% static 'images/jurtaka_logo.png' %}" height="70" width="auto"
                     class="logo" alt="logo"></a>
 
+            <!-- Nav buttons small devices -->
+            <div class="d-flex d-lg-none align-items-center">
+                <!-- Search icon for mobile and tablet -->
+                <button class="btn" id="searchIcon" type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+                <!-- Navbar toggler small devices -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
 
             <!-- Search bar -->
-            <form method="GET" action="{% url 'search_results' %}" class="d-flex col-6 mx-3 ms-lg-5">
-                <div class="input-group">
-                    <input type="search" class="form-control search-bar" placeholder="Search forum" aria-label="Search"
-                        name="q">
-                    <div class="input-group-append">
-                        <button class="btn " type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
+            <div class="d-none d-lg-flex col-12 col-lg-6 mx-3 ms-lg-5" id="searchFormContainer">
+                <form method="GET" action="{% url 'search_results' %}" class="d-flex w-100">
+                    <div class="input-group">
+                        <input type="search" class="form-control search-bar" placeholder="Search forum"
+                            aria-label="Search" name="q">
+                        <div class="input-group-append">
+                            <button class="btn " type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </form>
-
-            <!-- Navbar toggler small devices -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                </form>
+            </div>
 
             <!-- Nav items -->
             <div class="collapse navbar-collapse" id="navbarText">
@@ -166,6 +174,8 @@
         crossorigin="anonymous"></script>
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/9c41b36590.js" crossorigin="anonymous"></script>
+    <!-- Java Script -->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

@@ -163,3 +163,13 @@ input.search-bar::placeholder {
 .dropdown-item:hover {
     background-color: #de245c;
 }
+
+
+#searchFormContainer.show {
+    display: flex !important;
+}
+
+#searchIcon {
+    border: none;
+    background: transparent;
+}
