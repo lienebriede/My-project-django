@@ -1,0 +1,175 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    padding-top: 80px;
+    background: url("../images/background_wave.png");
+    background-size: cover;
+    background-repeat: repeat;
+    color: #3a3b3c;
+    font-family: "Lato",
+        sans-serif;
+}
+
+
+.navbar {
+    background-color: #374955;
+}
+
+.btn-navbar {
+    height: 25%;
+}
+
+.nav-link {
+    color: white;
+}
+
+a {
+    color: inherit;
+}
+
+.footer {
+    background-color: #f9f871;
+}
+
+i {
+    font-size: 150%;
+}
+
+.copy {
+    font-size: 100%;
+}
+
+.pagination>li>a {
+    background-color: white;
+    color: #3a3b3c;
+}
+
+.page-link {
+    color: #3a3b3c !important;
+}
+
+.page-item.active .page-link {
+    background-color: #3a3b3c !important;
+    color: white !important;
+    border-color: #3a3b3c !important;
+}
+
+.post-link {
+    text-decoration: none;
+}
+
+.container-white {
+    background-color: white !important;
+    border-radius: 20px;
+}
+
+
+.btn-primary {
+    background-color: #de245c !important;
+    border-color: #de245c;
+}
+
+.btn-primary:hover {
+    background-color: #d30e49 !important;
+    border-color: #d30e49;
+}
+
+.signup-link {
+    color: #de245c;
+    text-decoration: none;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+.pink-text {
+    color: #de245c;
+}
+
+
+.comment-container,
+.form-control {
+    background-color: #f4f7f7b9 !important;
+    border-radius: 10px !important;
+    border-color: #f4f7f7b9 !important;
+}
+
+
+.add-post-container {
+    background-color: white !important;
+    border-radius: 10px !important;
+    border-color: rgb(69, 69, 69);
+    height: 80px;
+}
+
+.btn-add-post {
+    background-color: #f9f871;
+    border-radius: 10px !important;
+}
+
+.btn-like {
+    border: none;
+    background-color: transparent;
+}
+
+
+.fa-comment,
+.fa-thumbs-up {
+    font-size: 18px;
+    color: #3a3b3c;
+}
+
+
+.btn-liked {
+    color: #de245c;
+}
+
+.top-posts-a:hover {
+    color: #d30e49;
+}
+
+.search-bar {
+    background-color: white !important;
+}
+
+input.search-bar {
+    color: #3a3b3c !important;
+}
+
+input.search-bar::placeholder {
+    color: #94989a !important;
+}
+
+.navbar .dropdown-menu {
+    background-color: #374955;
+}
+
+.nav-title {
+    color: rgb(167, 157, 157);
+    text-transform: uppercase;
+}
+
+.navbar i {
+    font-size: 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #de245c;
+}
+
+
+#searchFormContainer.show {
+    display: flex !important;
+}
+
+#searchIcon {
+    border: none;
+    background: transparent;
+}
