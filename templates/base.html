@@ -80,10 +80,42 @@
                         Forum
                     </li>
                     <li class="nav-item d-lg-none mt-4">
-                        <a class="nav-link" href="{% url 'top_posts' %}"><i class="fa-solid fa-star"></i> Top</a>
+                        <a class="nav-link" href="{% url 'top_posts' %}">
+                            <span class="me-2"><i class="fa-solid fa-star"></i></span>
+                            <span>Top</span>
+                        </a>
                     </li>
                     <li class="nav-item d-lg-none mt-2">
-                        <a class="nav-link" href="{% url 'home' %}"><i class="fa-solid fa-clock"></i> Latest</a>
+                        <a class="nav-link" href="{% url 'home' %}">
+                            <span class="me-2"><i class="fa-solid fa-clock"></i>
+                            </span>
+                            <span>Latest
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="nav-title d-lg-none mt-2">
+                        <hr>
+                        Categories
+                    </li>
+                    <li class="nav-item d-lg-none mt-4">
+                        <a class="nav-link" href="#">
+                            <span class="me-2"><i class="fa-solid fa-shoe-prints"></i></span>
+                            <span>Hiking</span></a>
+                    </li>
+                    <li class="nav-item d-lg-none mt-2">
+                        <a class="nav-link" href="#"><span class="me-2"><i class="fa-solid fa-utensils"></i>
+                            </span>
+                            <span>Food and Drink
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item d-lg-none mt-2">
+                        <a class="nav-link" href="#"><span class="me-2"><i class="fa-solid fa-bed"></i>
+                            </span>
+                            <span>Lodging
+                            </span>
+                        </a>
                     </li>
 
                     <li class="nav-title d-lg-none mt-2">
@@ -91,10 +123,18 @@
                         About
                     </li>
                     <li class="nav-item d-lg-none mt-4">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-person-hiking"></i> Jurtaka</a>
+                        <a class="nav-link" href="#"><span class="me-2"><i class="fa-solid fa-person-hiking"></i>
+                            </span>
+                            <span>Jurtaka
+                            </span>
+                        </a>
                     </li>
                     <li class="nav-item d-lg-none mt-2 mb-2">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-pen"></i> Contact</a>
+                        <a class="nav-link" href="#"><span class="me-2"><i class="fa-solid fa-pen"></i>
+                            </span>
+                            <span>Contact
+                            </span>
+                        </a>
                     </li>
                     <!-- Dropdown nav items for large devices -->
                     <li class="nav-item dropdown me-lg-2 mx-lg-4 d-none d-lg-block">
@@ -103,11 +143,31 @@
                             Forum
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="forumDropdown">
-                            <li><a class="dropdown-item mt-2 text-center" href="{% url 'top_posts' %}"><i
-                                        class="fa-solid fa-star"></i>
-                                    Top</a></li>
-                            <li><a class="dropdown-item mt-2 text-center" href="{% url 'home' %}"><i
-                                        class="fa-solid fa-clock"></i> Latest</a></li>
+                            <li><a class="dropdown-item mt-2 text-center" href="{% url 'top_posts' %}">
+                                    <span class="me-2"><i class="fa-solid fa-star"></i></span>
+                                    <span>Top</span>
+                                </a>
+                            </li>
+                            <li><a class="dropdown-item mt-2 text-center" href="{% url 'home' %}">
+                                    <span class="me-2"><i class="fa-solid fa-clock"></i></span>
+                                    <span>Latest</span></a>
+                            </li>
+                            <li class="nav-title mt-2 text-center">
+                                <hr>
+                                Categories
+                            </li>
+                            <li><a class="dropdown-item mt-4 text-center" href="#">
+                                    <span class="me-2"><i class="fa-solid fa-shoe-prints"></i></span>
+                                    <span>Hiking</span></a>
+                            </li>
+                            <li><a class="dropdown-item mt-3 text-center" href="#">
+                                    <span class="me-2"><i class="fa-solid fa-utensils"></i></span>
+                                    <span>Food and Drink</span></a>
+                            </li>
+                            <li><a class="dropdown-item mt-3 mb-3 text-center" href="#">
+                                    <span class="me-2"><i class="fa-solid fa-bed"></i></span>
+                                    <span>Lodging</span></a>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown me-lg-2 mx-lg-4 d-none d-lg-block">

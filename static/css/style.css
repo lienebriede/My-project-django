@@ -157,11 +157,12 @@ input.search-bar::placeholder {
 }
 
 .navbar i {
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .dropdown-item:hover {
-    background-color: #de245c;
+    background-color: #f9f871;
+    color: #3a3b3c;
 }
 
 
