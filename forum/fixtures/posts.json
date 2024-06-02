@@ -3,11 +3,11 @@
         "model": "forum.post",
         "pk": null,
         "fields": {
-            "title": "Sample post 000",
+            "title": "Curonian Spit to Klaipeda",
             "author": 1,
-            "slug": "sample-post-000",
-            "content": "This is a sample post, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
+            "slug": "curonian-to-klaipeda",
+            "content": "Just conquered my debut trek along the Jurtaka trail from the Curonian Spit to Klaipeda! Covered around 15 kilometers, and the sand dunes were absolutely mind-blowing, though the hike itself was moderately challenging. Packed enough water and snacks to keep me going, and it's such a perfect weather.  A sunny day with a refreshing breeze made every step worth it. Can hardly contain my excitement for what tomorrow's adventure holds!",
+            "created_on": "2024-04-28T08:37:56.123Z",
             "status": 1
         }
     },
@@ -15,11 +15,11 @@
         "model": "forum.post",
         "pk": null,
         "fields": {
-            "title": "Sample post 001",
-            "author": 1,
-            "slug": "sample-post-001",
-            "content": "This is a sample post nr1, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
+            "title": "Rainy day struggles",
+            "author": 2,
+            "slug": "rainy-day",
+            "content": "Got caught in a downpour near Jurkalne. The mud and slips were relentless, and even though our gear held up, it was a really tough day. I'm starting to wonder if the weather conditions are ever going to improve. I'm not sure if I should keep hiking on. Any advice on dealing with this kind of weather? The coastal views were beautiful, but I'm finding it hard to stay positive right now.",
+            "created_on": "2024-05-05T14:45:12.789Z",
             "status": 1
         }
     },
@@ -27,11 +27,11 @@
         "model": "forum.post",
         "pk": null,
         "fields": {
-            "title": "Sample post 002",
-            "author": 1,
-            "slug": "sample-post-002",
-            "content": "This is a sample post nr2, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
+            "title": "Pape Nature Park",
+            "author": 3,
+            "slug": "pape-park",
+            "content": "Just trekked through Pape Nature Park-covered about 20 kilometers in total. Super chill trail, mostly flat, difficulty level easy to moderate. And wow, the wildlife! Saw wild horses and tons of birds. Trail is in a great shape. Such a vibe! Later on the stretch took me through some serene forest paths and open meadows, making the entire hike even more enjoyable.",
+            "created_on": "2024-05-15T08:20:45.123Z",
             "status": 1
         }
     },
@@ -39,11 +39,11 @@
         "model": "forum.post",
         "pk": null,
         "fields": {
-            "title": "Sample post 003",
-            "author": 1,
-            "slug": "sample-post-003",
-            "content": "This is a sample post nr3, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
+            "title": "Epic sunset at Jurkalne cliffs",
+            "author": 4,
+            "slug": "jurkalne-sunset",
+            "content": "Ended a long hike with an epic sunset at Jurkalne cliffs. Some steep parts, but totally worth it. Cool weather, perfect for hiking. More days like this, please!",
+            "created_on": "2024-05-20T11:45:38.210Z",
             "status": 1
         }
     },
@@ -51,11 +51,11 @@
         "model": "forum.post",
         "pk": null,
         "fields": {
-            "title": "Sample post 004",
-            "author": 1,
-            "slug": "sample-post-004",
-            "content": "This is a sample post nr4, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
+            "title": "Trail struggles between Pape Nature Park and Liepaja",
+            "author": 6,
+            "slug": "trail-struggles",
+            "content": "Just finished a challenging stretch of today! The views were absolutely breathtaking, but I have to admit, finding food and supplies along this remote stretch was a bit of a struggle. With few shops or restaurants in sight, I found myself running low on snacks and water faster than I anticipated. Lesson learned: always pack more provisions than you think you'll need, especially on more isolated trails like this one. For anyone planning to tackle this section my advice is to stock up on essentials beforehand and carry plenty of water and high-energy snacks to keep you fueled throughout the day. It's also a good idea to plan your route carefully and identify any potential rest stops or towns with amenities along the way.Despite the challenges, the natural beauty and solitude of this stretch of the trail made it all worth it. Just make sure you're prepared for the journey ahead!",
+            "created_on": "2024-05-25T07:46:21.678Z",
             "status": 1
         }
     },
@@ -63,11 +63,11 @@
         "model": "forum.post",
         "pk": null,
         "fields": {
-            "title": "Sample post 005",
-            "author": 1,
-            "slug": "sample-post-005",
-            "content": "This is a sample post nr5, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
+            "title": "Heatwave hike near Riga",
+            "author": 7,
+            "slug": "heatwave-riga",
+            "content": "Hiking near Riga in a surprise heatwave. So hot but stayed hydrated and took shade breaks. Coastal scenery kept me going. Never expected this kind of heat!",
+            "created_on": "2024-06-03T09:13:34.567Z",
             "status": 1
         }
     },
@@ -75,35 +75,11 @@
         "model": "forum.post",
         "pk": null,
         "fields": {
-            "title": "Sample post 006",
+            "title": "Liepaja camping",
             "author": 1,
-            "slug": "sample-post-006",
-            "content": "This is a sample post nr6, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
-            "status": 1
-        }
-    },
-    {
-        "model": "forum.post",
-        "pk": null,
-        "fields": {
-            "title": "Sample post 007",
-            "author": 1,
-            "slug": "sample-post-007",
-            "content": "This is a sample post nr7, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now, This is a sample post nr7, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
-            "status": 1
-        }
-    },
-    {
-        "model": "forum.post",
-        "pk": null,
-        "fields": {
-            "title": "Sample post 008",
-            "author": 1,
-            "slug": "sample-post-008",
-            "content": "This is a sample post nr8, let's see how this post page looks like now",
-            "created_on": "2023-07-14T13:58:53.884Z",
+            "slug": "liepaja-camping",
+            "content": "Camped by the sea near Liepaja last night. The waves were so soothing. Hike to get here was moderate with some rocky bits. Sunset over the sea was magical!",
+            "created_on": "2024-06-12T17:56:23.345Z",
             "status": 1
         }
     }
