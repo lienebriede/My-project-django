@@ -6,6 +6,15 @@ from django.utils.text import slugify
 # Variable for approved posts
 STATUS = ((0, "Not Approved"), (1, "Approved"))
 
+class Category(models.Model):
+    """
+    Model for categories
+    """
+    name = models.CharField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+
 class Post(models.Model):
     """
     Model for posts
@@ -18,6 +27,7 @@ class Post(models.Model):
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    categories = models.ManyToManyField(Category, related_name='posts')
         
 
     # ordered by newest posts first    

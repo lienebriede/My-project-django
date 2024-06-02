@@ -83,6 +83,7 @@ def post_create(request):
             post = post_form.save(commit=False)
             post.author = request.user
             post.save()
+            post_form.save_m2m()
             messages.success(
                 request,
                 "Thanks for posting! Your post will be visible shortly."
