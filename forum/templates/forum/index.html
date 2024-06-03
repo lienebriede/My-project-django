@@ -24,7 +24,15 @@
             <!-- Link to an individual post display-->
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
                 <p><strong>{{ post.title }}</strong></p>
-                <p class="pb-2">{{ post.get_content_preview }}...</p>
+                <!-- Display category  -->
+                {% if post.categories.first.id == 1 %}
+                <i class="fa-solid fa-person-hiking"></i>
+                {% elif post.categories.first.id == 2 %}
+                <i class="fa-solid fa-apple-whole"></i>
+                {% elif post.categories.first.id == 3 %}
+                <i class="fa-solid fa-campground"></i>
+                {% endif %}
+                <p class="pt-2 pb-2">{{ post.get_content_preview }}...</p>
             </a>
             <div class="row mb-2">
                 <!-- Like count -->

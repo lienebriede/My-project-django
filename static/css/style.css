@@ -160,6 +160,10 @@ input.search-bar::placeholder {
     font-size: 16px;
 }
 
+.post-link i {
+    font-size: 120% !important;
+}
+
 .dropdown-item:hover {
     background-color: #f9f871;
     color: #3a3b3c;
