@@ -3,8 +3,9 @@ from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.db.models import Count, Q
 from django.contrib import messages
-from .models import Post, Like
+from .models import Post, Like, Category
 from .forms import CommentForm, PostForm
+from django.template import RequestContext
 
 def search_results(request):
     """
@@ -145,3 +146,33 @@ def post_detail(request, slug):
         },
 
     )
+
+def post_list_by_category(request, category_id):
+    """
+    Display posts filtered by category
+    """
+    category = get_object_or_404(Category, id=category_id)
+    queryset = Post.objects.filter(status=1, categories=category).annotate(comment_count=Count('comments')).order_by('-created_on')
+    
+    paginator = Paginator(queryset, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    is_paginated = page_obj.has_other_pages()
+
+    categories = Category.objects.all()
+
+    context = {
+        'page_obj': page_obj,
+        'posts': page_obj.object_list,
+        'is_paginated': is_paginated,
+        'selected_category': category.id,
+    }
+
+    return render(request, "forum/index.html", context)
+
+def base_view(request):
+    """
+    Load categories for base template
+    """
+    categories = Category.objects.all()
+    return {'categories': categories}    
