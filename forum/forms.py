@@ -20,14 +20,14 @@ class PostForm(forms.ModelForm):
     categories = forms.ModelMultipleChoiceField(
         queryset=Category.objects.all(),
         widget=forms.CheckboxSelectMultiple,
-        required=False,
+        required=True,
         label='Categories'
     )
 
 
     class Meta:
         model = Post
-        fields = ('title', 'content')
+        fields = ('title', 'content', 'categories')
         widgets = {
             'title': forms.TextInput(attrs={
                 'class': "form-control",
@@ -43,3 +43,13 @@ class PostForm(forms.ModelForm):
             'title': '',
             'content': '',
         }
+
+
+    # Customizes categories field
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['categories'].choices = [
+            (category.id, category.name) for category in Category.objects.all()
+    ]
+
+    
