@@ -9,7 +9,8 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'body': forms.TextInput(attrs={
                 'class': "form-control",
-                'placeholder': 'Leave a Comment',
+                'placeholder': 'Add a comment',
+                'style': 'height: 80px;',
             }),
         }
         labels = {

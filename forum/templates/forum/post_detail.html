@@ -35,6 +35,7 @@
                         {% endif %}
                     </button>
                 </form>
+
             </span>
         </div>
         <!-- Comment count -->
@@ -44,6 +45,13 @@
         <div class="col-12">
             <hr>
         </div>
+        <!-- Likers -->
+        {% if likers %}
+        <p>Liked by: {% for like in likers %}
+            <span><strong>{{ like.user.username }}</strong>,</span>
+            {% endfor %}
+        </p>
+        {% endif %}
     </div>
     <!-- Add comment -->
     <div class="row m-3">
