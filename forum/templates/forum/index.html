@@ -34,7 +34,8 @@
                 <i class="fas fa-campground ms-2"></i>
                 {% endif %}
                 {% endfor %}
-                <p class="pt-2 pb-2">{{ post.get_content_preview | safe }}...</p>
+                <p class="pt-2 pb-2">{{ post.get_content_preview | safe }}... <small class="text-muted">See more</small>
+                </p>
             </a>
             <div class="row mb-2">
                 <!-- Like count -->

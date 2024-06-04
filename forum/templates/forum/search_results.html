@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <div class="container-fluid">
@@ -16,8 +17,8 @@
         </div>
         <div class="col-6 col-md-8">
             <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                <p><strong>{{ post.title }}</strong></p>
-                <p class="pb-2">{{ post.get_content_preview }}...</p>
+                <p class="search-result"><strong>{{ post.title }}</strong></p>
+                <p class="pb-2 search-result">{{ post.content }}</p>
             </a>
             <div class="row mb-2">
                 <div class="col-5 col-md-2 col-lg-1">

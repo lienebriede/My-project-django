@@ -6,6 +6,8 @@ from django.contrib import messages
 from .models import Post, Like, Category
 from .forms import CommentForm, PostForm
 from django.template import RequestContext
+from django.utils.html import mark_safe
+import re
 
 def search_results(request):
     """
@@ -17,6 +19,12 @@ def search_results(request):
             Q(title__icontains=query) | Q(content__icontains=query), 
             status=1
         ).annotate(comment_count=Count('comments')).order_by('-created_on')
+    
+        # Highlight search results
+        for post in queryset:
+            post.title = mark_safe(re.sub(re.escape(query), f'<span class="highlight">{query}</span>', post.title, flags=re.IGNORECASE))
+            post.content = mark_safe(re.sub(re.escape(query), f'<span class="highlight">{query}</span>', post.content, flags=re.IGNORECASE))
+    
     else:
         queryset = Post.objects.none() 
 

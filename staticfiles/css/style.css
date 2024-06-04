@@ -126,7 +126,6 @@ i {
     color: #3a3b3c;
 }
 
-
 .btn-liked {
     color: #de245c;
 }
@@ -157,11 +156,16 @@ input.search-bar::placeholder {
 }
 
 .navbar i {
-    font-size: 20px;
+    font-size: 16px;
+}
+
+.post-link i {
+    font-size: 120% !important;
 }
 
 .dropdown-item:hover {
-    background-color: #de245c;
+    background-color: #f9f871;
+    color: #3a3b3c;
 }
 
 
@@ -172,4 +176,8 @@ input.search-bar::placeholder {
 #searchIcon {
     border: none;
     background: transparent;
+}
+
+.highlight {
+    background-color: yellow;
 }

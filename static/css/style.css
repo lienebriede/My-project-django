@@ -16,6 +16,9 @@ body {
         sans-serif;
 }
 
+.highlight {
+    background-color: yellow !important;
+}
 
 .navbar {
     background-color: #374955;

@@ -46,8 +46,8 @@ class Post(models.Model):
     # returns only two first lines of comment text
     def get_content_preview(self):
         words = self.content.split()  
-        first_25_words = words[:25]  
-        return ' '.join(first_25_words)
+        first_20_words = words[:20]  
+        return ' '.join(first_20_words)
 
     # returns a string for admin interface
     def __str__(self):
